@@ -479,16 +479,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const bookCard = document.createElement("div");
             bookCard.classList.add("book-card");
 
-            if (book.cover) {
-
-                const image = document.createElement("img");
-                image.src = book.cover;
-                image.alt = book.title + " cover";
-                image.classList.add("book-cover");
-
-                bookCard.appendChild(image);
-            }
-
             const heading = document.createElement("h3");
             heading.classList.add("clickable-title");
             heading.textContent = book.title;
