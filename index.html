@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Book Tracker 📚</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Website Header -->
+    <header>
+        <h1>My Book Tracker 📚</h1>
+    </header>
+
+    <main>
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <h2>Welcome to your bookshelf! 💗</h2>
+            <p>Keep track of all the books you love, want to read and are currently reading.</p>
+        </section>
+
+        <!-- Reading Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3>To Be Read (TBR)</h3>
+                <p id="tbrCount">0</p>
+            </div>
+
+        </section>
+
+        
+<!-- Admin Login -->
+<section class="admin-section">
+    <div id="loginSection">
+        <h3>Owner Login 🔐</h3>
+        <input
+            type="email"
+            id="adminEmail"
+            placeholder="Your email address"
+        >
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Your password"
+        >
+        <button id="loginBtn" type="button">
+            Log In
+        </button>
+        <p id="loginMessage"></p>
+    </div>
+
+    <div id="adminSection" style="display: none;">
+        <p>You're logged in as the library owner! 💗</p>
+        <button id="logoutBtn" type="button">
+            Log Out
+        </button>
+    </div>
+</section>
+
+        
+        <!-- Add Book Button -->
+        <section class="add-book-section">
+
+            <button id="addBookBtn" type="button">
+                + Add a Book
+            </button>
+
+        </section>
+
+        <!-- Add Book Form -->
+        <section id="bookForm" class="book-form" style="display: none;">
+
+            <h2>Add a New Book 📚</h2>
+
+            <label for="title">Book Title</label>
+            <input
+                type="text"
+                id="title"
+                placeholder="e.g. Iron Flame"
+            >
+
+            <label for="author">Author</label>
+            <input
+                type="text"
+                id="author"
+                placeholder="e.g. Rebecca Yarros"
+            >
+
+            <label for="series">Series</label>
+            <input
+                type="text"
+                id="series"
+                placeholder="e.g. The Empyrean"
+            >
+
+            <label for="seriesNumber">Series Number</label>
+            <input
+                type="number"
+                id="seriesNumber"
+                placeholder="e.g. 2"
+            >
+
+            <label for="price">Price (£)</label>
+            <input
+                type="number"
+                id="price"
+                step="0.01"
+                placeholder="e.g. 9.99"
+            >
+
+            <label for="cover">Book Cover Image URL</label>
+            <input
+                type="url"
+                id="cover"
+                placeholder="Paste image link here"
+            >
+
+            <button id="saveBookBtn" type="button">
+                Add Book to My Library
+            </button>
+
+        </section>
+
+        <!-- Your Bookshelf -->
+        <section class="bookshelf-section">
+
+            <h2>My Bookshelf 📖</h2>
+
+            <div id="bookList" class="book-list">
+
+                <!-- New books will automatically appear here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+   <!-- Supabase Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Your Website JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
