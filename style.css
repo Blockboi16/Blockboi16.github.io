@@ -1,0 +1,469 @@
+
+:root {
+    --blue: #8EABC8;
+    --dark-blue: #385675;
+    --light-blue: #DCE8F2;
+    --beige: #F3EBDD;
+    --cream: #FFFCF6;
+    --text: #35475A;
+}
+
+/* Page background */
+body {
+    background-color: var(--beige);
+    color: var(--text);
+    font-family: Georgia, serif;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #8EABC8, #B7CBE0);
+    color: white;
+    text-align: center;
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 22px;
+    box-shadow: 0 5px 15px rgba(56, 86, 117, 0.15);
+}
+
+header h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Add a Book button */
+#addBookBtn {
+    background: linear-gradient(135deg, #385675, #587A9D);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(56, 86, 117, 0.2);
+    transition: all 0.25s ease;
+}
+
+#addBookBtn:hover {
+    background: linear-gradient(135deg, #29435E, #45698D);
+    transform: translateY(-3px);
+}
+
+/* Add a Book form */
+.book-form {
+    background: linear-gradient(145deg, #DCE8F2, #C5D8E9);
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(56, 86, 117, 0.15);
+    border: 1px solid #B2C8DC;
+}
+
+.book-form h2 {
+    color: #385675;
+    text-align: center;
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #587A9D;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Arrange form fields in two columns */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.book-form label {
+    display: block;
+    color: #385675;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.book-form input {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #B2C8DC;
+    border-radius: 12px;
+    background-color: #FFFCF6;
+    color: #35475A;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.book-form input:focus {
+    border-color: #385675;
+    box-shadow: 0 0 0 3px rgba(56, 86, 117, 0.12);
+}
+
+/* Save button */
+#saveBookBtn {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #385675, #587A9D);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#saveBookBtn:hover {
+    background: #29435E;
+    transform: translateY(-2px);
+}
+
+/* Book shelf layout */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Individual book cards */
+.book-card {
+    background: linear-gradient(145deg, #DCE8F2, #C5D8E9);
+    padding: 12px;
+    border-radius: 16px;
+    text-align: center;
+    min-width: 0;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(56, 86, 117, 0.12);
+    border: 1px solid #B2C8DC;
+}
+
+/* Book covers */
+.book-card img {
+    width: 100%;
+    max-width: 100px;
+    height: 145px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Book titles */
+.book-card h3 {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* Book details */
+.book-card p {
+    font-size: 12px;
+    margin: 5px 0;
+    overflow-wrap: anywhere;
+}
+
+/* Edit and Delete buttons */
+.edit-btn,
+.delete-btn {
+    border: none;
+    padding: 7px 12px;
+    margin: 3px 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.edit-btn {
+    background-color: #587A9D;
+}
+
+.delete-btn {
+    background-color: #385675;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    background-color: #29435E;
+    transform: translateY(-2px);
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .book-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .book-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-form {
+        margin: 20px 12px;
+        padding: 22px;
+    }
+
+    header {
+        margin: 15px 12px;
+    }
+}
+
+/* Clickable book cover */
+.cover-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.cover-button img {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cover-button:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 5px 14px rgba(56, 86, 117, 0.2);
+}
+
+/* Book details overlay */
+.details-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(35, 53, 72, 0.65);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Details window */
+.details-panel {
+    position: relative;
+    background: linear-gradient(145deg, #FFFCF6, #F3EBDD);
+    width: 100%;
+    max-width: 550px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 35px;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.details-title {
+    color: #385675;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    overflow-wrap: anywhere;
+}
+
+/* Close button */
+.close-details {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    border: none;
+    background: none;
+    color: #385675;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Details labels */
+.details-panel label {
+    display: block;
+    color: #385675;
+    font-weight: bold;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+/* Link input and blurb box */
+.details-panel input,
+.details-panel textarea {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #B2C8DC;
+    border-radius: 12px;
+    background: #FFFCF6;
+    color: #35475A;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.details-panel input:focus,
+.details-panel textarea:focus {
+    border-color: #385675;
+    box-shadow: 0 0 0 3px rgba(56, 86, 117, 0.12);
+}
+
+.details-panel textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Save details button */
+#saveDetailsBtn {
+    width: 100%;
+    margin-top: 22px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #385675, #587A9D);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#saveDetailsBtn:hover {
+    background: #29435E;
+    transform: translateY(-2px);
+}
+
+/* Details window on smaller screens */
+@media (max-width: 550px) {
+    .details-panel {
+        padding: 28px 20px;
+    }
+}
+
+
+/* Small read symbol beside book title */
+.read-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 19px;
+    background-color: #385675;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+/* Read checkbox */
+.read-toggle {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 13px;
+    background-color: #DCE8F2;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.read-toggle input {
+    width: 18px !important;
+    height: 18px;
+    accent-color: #385675;
+    cursor: pointer;
+}
+
+/* Rating sections */
+.rating-section {
+    margin-top: 22px;
+}
+
+.rating-section label {
+    margin-bottom: 10px;
+}
+
+/* Rating buttons */
+.rating-buttons {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+}
+
+.rating-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 27px;
+    padding: 3px;
+    transition: transform 0.2s ease;
+}
+
+.rating-button:hover {
+    transform: scale(1.2);
+}
+
+/* Selected stars */
+.rating-button.selected {
+    color: #D49A32;
+}
+
+/* Selected chilli ratings */
+#spiceRating .rating-button {
+    font-size: 23px;
+    opacity: 0.3;
+}
+
+#spiceRating .rating-button.selected {
+    opacity: 1;
+}
+
+
+/* Clickable book titles */
+.clickable-title {
+    color: #385675;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.clickable-title:hover {
+    color: #8EABC8;
+    text-decoration: underline;
+}
+
+/* Book cover image */
+.book-cover {
+    display: block;
+    max-width: 100px;
+    height: 145px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+}
+
+/* Ratings on bookshelf cards */
+.card-rating,
+.card-spice {
+    margin: 6px 0;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
